@@ -11,3 +11,4 @@ toStrictEqual・・・より厳しい。<br>
 
 
 yarn run testで実行。
+ts-node src/chapter2/assertion/promise.ts で、指定ファイルを実行
