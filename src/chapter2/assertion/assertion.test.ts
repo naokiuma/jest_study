@@ -194,3 +194,44 @@ test('6文字以上でエラーが投げられているか確認',()=>{
 // const callback = (message: string) => {
 // expect(message).toBe('lemon') }
 // fetchDataWithCallback(callback) })
+
+//消費税の計算テスト
+// const calcurateSalesTax = (price:number) =>{
+   
+    
+const calculateSalesTax = (price: number) =>{
+    return price > 0 ? Math.floor((price / 100) * 10) :0 
+}
+
+describe('消費税計算_each',() =>{
+    test.each([
+        {price:100,expected:10},
+        {price:500,expected:50}
+    ])(
+        '計算します。',
+        ({price,expected}) =>{
+            expect(calculateSalesTax(price)).toBe(expected)
+
+        }
+    )
+})
+
+
+
+//前後処理
+let beforetest;
+
+beforeAll(() => {
+    beforetest = 'testです'
+})
+
+test('beforeallです。',()=>{
+    expect(beforetest).toBe('testです');
+
+})
+
+// その他の処理。
+// ■ beforeAll: describe 内で定義されているすべてのテストの実行前に 1 回実行される
+// ■ beforeEach: describe 内で定義されているそれぞれのテストの実行前に 1 回実行される 
+// ■ afterAll: describe 内で定義されているすべてのテストの終了後に 1 回実行される
+// ■ afterEach: describe 内で定義されているそれぞれのテストの終了後に 1 回実行される

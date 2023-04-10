@@ -12,3 +12,11 @@ toStrictEqual・・・より厳しい。<br>
 
 yarn run testで実行。
 ts-node src/chapter2/assertion/promise.ts で、指定ファイルを実行
+
+下記のようにワーカーを指定して、メモリを制限することも可能。<br>
+・1つのワーカーでテストする<br>
+npx jest --runInBand src/chapter2/group/group.test.ts<br>
+・2つのワーカーでテストする<br>
+npx jest --maxWorkers=2 src/chapter2/group/group.test.ts<br>
+・マシンの持つCPUの50%の数のワーカーでテストする<br>
+npx jest --maxWorkers=50% src/chapter2/group/group.test.ts<br>
