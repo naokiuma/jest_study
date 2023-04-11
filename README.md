@@ -10,8 +10,10 @@ toStrictEqual・・・より厳しい。<br>
 ・厳密な比較。undefinedなプロパティなど<br>
 
 
-yarn run testで実行。
-ts-node src/chapter2/assertion/promise.ts で、指定ファイルを実行
+yarn run testで実行。<br>
+ts-node src/chapter2/assertion/promise.ts で、指定ファイルを実行<br>
+npx jest src/chapter2/getting_started_jest/sum.test.ts<br>
+で、特定ファイルだけテスト
 
 下記のようにワーカーを指定して、メモリを制限することも可能。<br>
 ・1つのワーカーでテストする<br>
@@ -20,3 +22,7 @@ npx jest --runInBand src/chapter2/group/group.test.ts<br>
 npx jest --maxWorkers=2 src/chapter2/group/group.test.ts<br>
 ・マシンの持つCPUの50%の数のワーカーでテストする<br>
 npx jest --maxWorkers=50% src/chapter2/group/group.test.ts<br>
+
+
+yarn run test --runInBand<br>
+で、1つのワーカーで実行する

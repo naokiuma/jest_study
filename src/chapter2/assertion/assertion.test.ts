@@ -204,11 +204,11 @@ const calculateSalesTax = (price: number) =>{
 }
 
 describe('消費税計算_each',() =>{
-    test.each([
+    test.skip.each([
         {price:100,expected:10},
         {price:500,expected:50}
     ])(
-        '計算します。',
+        '計算しますここにはテストの説明が入るよ',
         ({price,expected}) =>{
             expect(calculateSalesTax(price)).toBe(expected)
 
@@ -235,3 +235,12 @@ test('beforeallです。',()=>{
 // ■ beforeEach: describe 内で定義されているそれぞれのテストの実行前に 1 回実行される 
 // ■ afterAll: describe 内で定義されているすべてのテストの終了後に 1 回実行される
 // ■ afterEach: describe 内で定義されているそれぞれのテストの終了後に 1 回実行される
+
+
+
+// ■ describe.skip or xdescribe: グループ内のテストケースすべてをスキップ 
+// ■ test.skip or xtest: テストケースをスキップ
+// ■ it.skip or xit: テストケースをスキップ
+
+// skipを追加すると、そのテストは飛ばされる
+
