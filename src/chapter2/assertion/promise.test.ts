@@ -16,12 +16,12 @@ const doSomethingAsync = () =>{
 
 
 // Promise オブジェクトは then や catch 関数にあらかじめ、
-// 成功時や失敗時に呼び出される処理をコールバック関数として登録でき流。
+// 成功時や失敗時に呼び出される処理をコールバック関数として登録できる。
 
 const successCallback = () => { console.log('成功した') } 
 const failureCallback = () => { console.log('失敗した') }
 
-//thenとchatcを利用した場合
+//thenとcatchを利用した場合
 // 失敗時の処理は catch を利用する以外にも、then 関数の第 2 引数で設定できます。
 doSomethingAsync().then(successCallback).catch(failureCallback)
 doSomethingAsync().then(successCallback,failureCallback)
