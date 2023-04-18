@@ -6,9 +6,9 @@ describe('jestのモック初め',()=>{
         const mockFunction = jest.fn();
 
         // calssプロバティ・・・呼び出しごとの引数が含まれる
-        // resultsプロパティを持つ・・・呼び出しごとの結果が含まれる。
+        // resultsプロパティ・・・呼び出しごとの結果が含まれる。
 
-        //モックファンクションのか結果はundefined。
+        //モックファンクションの結果はundefined。
         expect(mockFunction('foo')).toBe(undefined)
 
         //特定のプロパティを持っているか？
@@ -20,12 +20,13 @@ describe('jestのモック初め',()=>{
 
 
 
-    //jest.fnは返り血を設定できる。
+    //jest.fnは任意の　返り血を設定できる。
     test('jest.fnの関数の返り値を設定',()=>{
         //返り値を設定
         const mockFunctionHello = jest.fn(()=>{
              return 'hello'
         })
+        // const mockFunctionHello = jest.fn(()=> 'hello')//上記と同じ
         // const mockFunction = jest.fn().mockImplementation(() => 'Hello') // 上記と同じ設定
         expect (mockFunctionHello()).toBe('hello')
     })

@@ -1,7 +1,7 @@
 import  {chohan} from './chohan'
 
 //jest.mockの第一引数には内部モジュールのパスを渡す。
-//この操作でseedをモック化する。seedは10しか返さなくなる。
+//この操作でseedをモック化する。seedは300しか返さなくなる。
 jest.mock('./seed',() => {
     return{
         seed:jest.fn()
