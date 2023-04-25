@@ -23,6 +23,24 @@ npx jest --maxWorkers=2 src/chapter2/group/group.test.ts<br>
 ・マシンの持つCPUの50%の数のワーカーでテストする<br>
 npx jest --maxWorkers=50% src/chapter2/group/group.test.ts<br>
 
-
+<br>
 yarn run test --runInBand<br>
-で、1つのワーカーで実行する
+で、1つのワーカーで実行する<br>
+
+<br>
+jsdomについて
+<br>
+プロジェクト全体のtestEnvironment を jsdom に変更する場合: jest.config.ts
+```
+export default {
+    "testEnvironment": "jsdom",
+}
+```
+ファイル単位でやる場合
+```
+/**
+* @jest-environment node
+*/
+```
+
+
